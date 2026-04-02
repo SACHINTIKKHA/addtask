@@ -1,0 +1,120 @@
+<!-- this is a todo list by click on list option it shows changes -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Birthstone&display=swap');
+</style>
+</head>
+<style>
+    *{
+        font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: bolder;
+        font-style: normal;
+        font-variation-settings:"width" 100;  
+}
+    #boxes{
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+       background: linear-gradient(170deg, rgba(49, 57, 73, 0.8) 20%, rgba(49, 57, 73, 0.5) 20%, rgba(49, 57, 73, 0.5) 35%, rgba(41, 48, 61, 0.6) 35%, rgba(41, 48, 61, 0.8) 45%, rgba(31, 36, 46, 0.5) 45%, rgba(31, 36, 46, 0.8) 75%, rgba(49, 57, 73, 0.5) 75%), linear-gradient(45deg, rgba(20, 24, 31, 0.8) 0%, rgba(41, 48, 61, 0.8) 50%, rgba(82, 95, 122, 0.8) 50%, rgba(133, 146, 173, 0.8) 100%) #313949;
+    }
+    #addbtn{
+          
+        background: linear-gradient(to left, rgba(8, 20, 43, 0), #2662d9);
+        width: 120px;
+        color: white;
+        height: 40px;
+        border-radius: 3px;
+        transition: 1s;
+    }
+    
+#target{
+    height: 25px;
+    border: 2px solid red;
+    padding: 8px;
+    border-radius: 5px;
+    
+
+}
+#targetlist{
+    color:black;
+     font-family: "Fleur De Leah", cursive;
+    font-weight: 400;
+    font-style: normal;
+
+}
+#addbtn:hover{
+        background:#008BFF ;
+        color: #EEEEEE;
+        
+}
+h1{
+    color: white;
+    font-family: pacifico;
+}
+#page{
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, hsla(298, 68%, 90%, 1) 0%, hsla(30, 82%, 91%, 1) 100%);
+     font-family: "Birthstone", cursive;
+  font-weight: 400;
+  font-style: normal;
+    
+}
+
+
+</style>
+
+<body><div id="boxes">
+    <form>
+    <H1>ADD YOUR TARGET </H1>
+   <input type="text" id="target" placeholder="START YOUR DAY here........">
+    <button id="addbtn">ADD TASK</button>
+   <div id="page">
+   <ul id="targetlist"></ul></div>
+   </form>
+   <script>
+    // userinput.value=""; its mean that it will clear input for next value
+    function addtarget(){
+        event.preventDefault();
+        let userinput=document.getElementById("target");
+        let usertasklist=document.getElementById("targetlist");
+        let a=document.createElement("li");
+        if(userinput.value===""){
+            alert("Add you TARGET first");
+            return;
+        }else{
+            a.innerHTML=userinput.value;
+
+        }
+        usertasklist.appendChild(a);
+        userinput.value="";
+        let lis=document.createElement("input");
+        lis.type="checkbox";
+        a.appendChild(lis);
+         lis.addEventListener('click',function(){
+        if(lis.checked){
+            a.style.textDecoration="line-through"
+        }else{
+             a.style.textDecoration="none"
+        }});
+    }
+    document.getElementById("addbtn").addEventListener("click",addtarget);
+   </script>
+</body>
+</html>
+<!-- i add some changes -->
+ <!-- why what happen -->
